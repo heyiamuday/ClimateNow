@@ -1,4 +1,15 @@
 {
+  "name": "climate-now",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "deploy": "NODE_ENV=production npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
     "@babel/core": "^7.26.7",
     "@babel/preset-env": "^7.26.7",
@@ -9,6 +20,7 @@
     "css-minimizer-webpack-plugin": "^7.0.0",
     "dart-sass": "^1.25.0",
     "dotenv-webpack": "^8.1.0",
+    "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
@@ -23,13 +35,5 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
   },
-  "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "deploy": "npm run build && gh-pages -d dist" 
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2",
-    "lodash": "^4.17.21"
-  }
+  "homepage": "https://udaydocs.github.io/ClimateNow/"
 }
