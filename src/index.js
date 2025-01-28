@@ -1,7 +1,5 @@
 import './styles/main.scss';
-// import './styles/main.module.scss';
 
-// const API_KEY = 'e6bbe854d03bc9ce738f1e30c12c4688';
 const API_KEY = process.env.API_KEY;
 const weatherCard = document.querySelector('.weather-card');
 const errorMessage = document.querySelector('.error-message');

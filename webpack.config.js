@@ -39,12 +39,6 @@ module.exports = {
         new webpack.DefinePlugin({
       'process.env.API_KEY': JSON.stringify(btoa(API_KEY).split('').reverse().join(''))
     }),
-    // new webpack.DefinePlugin({
-    //   'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
-    // }),
-    // new webpack.DefinePlugin({
-    //   'process.env.API_KEY': JSON.stringify(API_KEY)
-    // }),
   ],
   module: {
     rules: [
