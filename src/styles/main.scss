@@ -31,25 +31,31 @@ body {
     }
 
     &.clouds {
-        background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+        background: linear-gradient(135deg, #d3d3d3, #696969);
     }
-
+    
     &.rain {
         background: linear-gradient(135deg, #63afdf, #363795);
     }
-
+    
     &.thunderstorm {
         background: linear-gradient(135deg, #0f0c29, #302b63);
     }
-
+    
     &.snow {
+        
         background: linear-gradient(135deg, #e6dada, #274046);
     }
 
-    &.mist,
-    &.haze,
+    &.mist {
+        background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+    }
+    &.haze {
+        background: linear-gradient(135deg, #d3d3d3f6, #696969);
+
+    }
     &.fog {
-        background: linear-gradient(135deg, #3a6073, #3a7bd5);
+        background: linear-gradient(135deg, #3e5561, #3a7bd5);
     }
 
     &.default {
