@@ -2,8 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const webpack = require("webpack");
-const API_KEY = process.env.API_KEY || "fallback_key_for_development";
+
 
 module.exports = {
   mode: "development",
@@ -34,11 +33,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "styles.[contenthash].css",
-    }),
-    new webpack.DefinePlugin({
-      "process.env.API_KEY": JSON.stringify(
-        btoa(API_KEY).split("").reverse().join("")
-      ),
     }),
   ],
   module: {
