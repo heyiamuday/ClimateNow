@@ -22,11 +22,10 @@ body {
     background: var(--background-gradient);
     color: var(--text-color);
     padding: 2rem;
+    transition: background 0.5s ease; /* Added transition here */
 }
 
 body {
-    transition: background 0.5s ease;
-
     &.clear {
         background: linear-gradient(135deg, #ffd89b, #19547b);
     }
@@ -54,13 +53,9 @@ body {
     }
 
     &.default {
-        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        background: var(--background-gradient); /* Ensure a gradient for default */
     }
 }
-
-
-
-
 
 .container {
     max-width: 800px;
@@ -84,6 +79,12 @@ body {
     gap: 1rem;
     max-width: 500px;
     margin: 0 auto;
+     @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
 
     .search-input {
         flex: 1;
@@ -109,7 +110,6 @@ body {
 
         &:hover {
             background: color.adjust(#0984e3, $lightness: -5%);
-
             transform: translateY(-2px);
         }
 
@@ -125,14 +125,22 @@ body {
 
 .weather-card {
     border-radius: 16px;
-    // background: var(--card-bg);
     padding: 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.603);
     backdrop-filter: blur(10px);
     min-height: 400px;
     display: none;
-    margin-left: 130px;
-    margin-right: 130px;
+    // margin-left: 130px;
+    // margin-right: 130px;
+    max-width: 800px;
+    margin: 2rem auto;
+      background: var(--card-bg);
+    
+     @media (max-width: 768px) {
+         min-height: auto;
+         margin: 1rem;
+    }
+
 
     &.show {
         display: block;
@@ -140,51 +148,15 @@ body {
     }
 }
 
-
-// .weather-card.clear {
-//     background: linear-gradient(135deg, #ffd89b, #19547b);
-// }
-
-// .weather-card.clouds {
-//     background: linear-gradient(135deg, #bdc3c7, #2c3e50);
-// }
-
-// .weather-card.rain {
-//     background: linear-gradient(135deg, #bdc3c7, #bdc3c7);
-// }
-
-// .weather-card.thunderstorm {
-//     background: linear-gradient(135deg, #0f0c29, #302b63);
-// }
-
-// .weather-card.snow {
-//     background: linear-gradient(135deg, #e6dada, #274046);
-// }
-
-// .weather-card.mist,
-// .weather-card.haze,
-// .weather-card.fog {
-//     background: linear-gradient(135deg, #3a6073, #3a7bd5);
-// }
-
-// .weather-card.default {
-//     background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-// }
-
-// .weather-card.show {
-//     display: block;
-//     animation: fadeIn 0.5s ease;
-// }
-
-
-
-
-
-
 .weather-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+
+     @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+
 
     .location {
         margin-bottom: 1.5rem;
@@ -204,6 +176,12 @@ body {
         display: flex;
         align-items: center;
         gap: 1rem;
+        justify-content: flex-start;
+        
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+
 
         .weather-icon {
             width: 80px;
@@ -225,18 +203,27 @@ body {
         font-size: 1.2rem;
         text-transform: capitalize;
         margin-bottom: 2rem;
+        text-align: left;
+         @media (max-width: 768px) {
+           text-align: center;
+        }
     }
 
     .details {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+        @media (max-width: 768px) {
+           grid-template-columns: 1fr;
+        }
+
 
         .detail-item {
             background: rgba(255, 255, 255, 0.6);
             padding: 1rem;
             border-radius: 8px;
             text-align: center;
+            
 
             .detail-label {
                 display: block;
@@ -308,20 +295,6 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .weather-info {
-        grid-template-columns: 1fr;
-
-        .temperature {
-            justify-content: center;
-        }
-    }
-
-    .details {
-        grid-template-columns: 1fr !important;
-    }
-}
-
 .unit-toggle {
     display: flex;
     background: rgba(255, 255, 255, 0.8);
@@ -349,7 +322,3 @@ body {
         }
     }
 }
-
-
-
-

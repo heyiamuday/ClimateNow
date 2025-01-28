@@ -126,7 +126,8 @@ function showError(message) {
   errorMessage.textContent = message;
   errorMessage.style.display = "block";
   weatherCard.classList.remove("show");
-  document.body.classList.add("default");
+  document.body.classList.remove("clear", "clouds", "rain", "thunderstorm", "snow", "mist", "haze", "fog");
+document.body.classList.add("default");
 }
 
 // Unit toggle handler
