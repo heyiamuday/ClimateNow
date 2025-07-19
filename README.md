@@ -1,5 +1,5 @@
 ## 🌦️ Live Demo  
-[ClimateNow Live Demo](https://udaydocs.github.io/ClimateNow/)  
+[ClimateNow Live Demo](https://heyiamuday.github.io/ClimateNow/)  
 
 ---
 
